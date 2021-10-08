@@ -128,6 +128,39 @@ touch app-versions \
 && az version >> app-versions \
 && echo "------------" >> app-versions
 
+# Install VSCODE Extensions
+echo Do you want to install Visual Studio Code Extensions [y/n]?
+read varcode
+
+if [ $varcode == "y" ]
+then
+  code --install-extension alefragnani.project-manager
+  code --install-extension bencoleman.armview
+  code --install-extension codezombiech.gitignore
+  code --install-extension donjayamanne.git-extension-pack
+  code --install-extension donjayamanne.githistory
+  code --install-extension eamodio.gitlens
+  code --install-extension GitHub.vscode-pull-request-github
+  code --install-extension hashicorp.terraform
+  code --install-extension ms-azure-devops.azure-pipelines
+  code --install-extension ms-azuretools.vscode-azureappservice
+  code --install-extension ms-azuretools.vscode-azurefunctions
+  code --install-extension ms-azuretools.vscode-azureresourcegroups
+  code --install-extension ms-azuretools.vscode-azurestorage
+  code --install-extension ms-azuretools.vscode-azurevirtualmachines
+  code --install-extension ms-azuretools.vscode-bicep
+  code --install-extension ms-azuretools.vscode-cosmosdb
+  code --install-extension ms-azuretools.vscode-docker
+  code --install-extension ms-dotnettools.vscode-dotnet-runtime
+  code --install-extension ms-kubernetes-tools.vscode-kubernetes-tools
+  code --install-extension ms-vscode.azure-account
+  code --install-extension ms-vscode.azurecli
+  code --install-extension ms-vscode.vscode-node-azure-pack
+  code --install-extension msazurermtools.azurerm-vscode-tools
+  code --install-extension redhat.vscode-yaml
+  code --install-extension ziyasal.vscode-open-in-github
+fi
+
 # Git global config
 echo Do you want to configure git global user settings [y/n]?
 read vargit

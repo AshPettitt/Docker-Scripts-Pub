@@ -5,7 +5,7 @@ TERRAGRUNT_VERSION=v0.35.16
 
 # Update Ubuntu
 apt-get update \
-&& apt-get upgrade -y
+&& apt-get dist-upgrade
 
 # Set Locale and TimeZone
 echo 'tzdata tzdata/Areas select Europe' | debconf-set-selections \

@@ -92,7 +92,8 @@ curl -sL https://aka.ms/InstallAzureCLIDeb | bash
 
 # Install user tools
 apt-get install nano -y \
-&& apt-get install tree -y
+&& apt-get install tree -y \
+&& apt-get install vim -y
 
 # Check installs
 touch app-versions \

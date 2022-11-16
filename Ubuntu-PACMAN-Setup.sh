@@ -21,7 +21,8 @@ apt-get install gnupg -y \
 && apt-get install curl -y \
 && apt-get install wget -y \
 && apt-get install apt-transport-https -y \
-&& apt-get install ca-certificates -y
+&& apt-get install ca-certificates -y \
+&& apt-get install jq -y
 
 # Install Terraform and Packer
 curl -fsSL https://apt.releases.hashicorp.com/gpg | apt-key add - \
@@ -93,7 +94,9 @@ curl -sL https://aka.ms/InstallAzureCLIDeb | bash
 # Install user tools
 apt-get install nano -y \
 && apt-get install tree -y \
-&& apt-get install vim -y
+&& apt-get install vim -y \
+&& apt-get install iputils-ping -y \
+&& apt-get install traceroute -y
 
 # Check installs
 touch app-versions \

@@ -5,6 +5,7 @@ TERRAGRUNT_VERSION=v0.37.1
 
 # Update Ubuntu
 apt-get update \
+&& apt-get upgrade \
 && apt-get dist-upgrade
 
 # Set Locale and TimeZone
@@ -91,82 +92,15 @@ curl https://baltocdn.com/helm/signing.asc | apt-key add - \
 # Install Azure CLI
 curl -sL https://aka.ms/InstallAzureCLIDeb | bash
 
+# Install go
+apt-get install golang-go -y
+
 # Install user tools
 apt-get install nano -y \
 && apt-get install tree -y \
 && apt-get install vim -y \
 && apt-get install iputils-ping -y \
 && apt-get install traceroute -y
-
-# Check installs
-touch app-versions \
-&& echo "# Ubuntu version" > app-versions \
-&& lsb_release -a >> app-versions \
-&& echo "------------" >> app-versions \
-&& echo "# Terraform version" >> app-versions \
-&& terraform --version >> app-versions \
-&& echo "------------" >> app-versions \
-&& echo "# Packer version" >> app-versions \
-&& packer --version >> app-versions \
-&& echo "------------" >> app-versions \
-&& echo "# Terragrunt version" >> app-versions \
-&& terragrunt --version >> app-versions \
-&& echo "------------" >> app-versions \
-&& echo "# Ansible version" >> app-versions \
-&& ansible --version >> app-versions \
-&& echo "------------" >> app-versions \
-&& echo "# Powershell version" >> app-versions \
-&& pwsh --version >> app-versions \
-&& echo "------------" >> app-versions \
-&& echo "# Git version" >> app-versions \
-&& git --version >> app-versions \
-&& echo "------------" >> app-versions \
-&& echo "# Kubectl version" >> app-versions \
-&& kubectl version --client >> app-versions \
-&& echo "------------" >> app-versions \
-&& export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH" \
-&& echo "# Kubectl krew version" >> app-versions \
-&& kubectl krew version >> app-versions \
-&& echo "------------" >> app-versions \
-&& echo "# Helm version" >> app-versions \
-&& helm version --client >> app-versions \
-&& echo "------------" >> app-versions \
-&& echo "# Azure CLI version" >> app-versions \
-&& az version >> app-versions \
-&& echo "------------" >> app-versions
-
-# Install VSCODE Extensions
-echo Do you want to install Visual Studio Code Extensions [y/n]?
-read varcode
-
-if [ $varcode == "y" ]
-then
-  code --install-extension alefragnani.project-manager
-  code --install-extension bencoleman.armview
-  code --install-extension codezombiech.gitignore
-  code --install-extension donjayamanne.git-extension-pack
-  code --install-extension donjayamanne.githistory
-  code --install-extension eamodio.gitlens
-  code --install-extension GitHub.vscode-pull-request-github
-  code --install-extension hashicorp.terraform
-  code --install-extension ms-azure-devops.azure-pipelines
-  code --install-extension ms-azuretools.vscode-azureappservice
-  code --install-extension ms-azuretools.vscode-azurefunctions
-  code --install-extension ms-azuretools.vscode-azureresourcegroups
-  code --install-extension ms-azuretools.vscode-azurestorage
-  code --install-extension ms-azuretools.vscode-azurevirtualmachines
-  code --install-extension ms-azuretools.vscode-bicep
-  code --install-extension ms-azuretools.vscode-cosmosdb
-  code --install-extension ms-azuretools.vscode-docker
-  code --install-extension ms-dotnettools.vscode-dotnet-runtime
-  code --install-extension ms-kubernetes-tools.vscode-kubernetes-tools
-  code --install-extension ms-vscode.azure-account
-  code --install-extension ms-vscode.azurecli
-  code --install-extension ms-vscode.vscode-node-azure-pack
-  code --install-extension msazurermtools.azurerm-vscode-tools
-  code --install-extension redhat.vscode-yaml
-  code --install-extension ziyasal.vscode-open-in-github
-fi
 
 # Git global config
 echo Do you want to configure git global user settings [y/n]?

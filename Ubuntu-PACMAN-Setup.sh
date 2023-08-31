@@ -95,6 +95,10 @@ curl -sL https://aka.ms/InstallAzureCLIDeb | bash
 # Install go
 apt-get install golang-go -y
 
+# Install Python
+
+# Install AWS CLI
+
 # Install user tools
 apt-get install nano -y \
 && apt-get install tree -y \

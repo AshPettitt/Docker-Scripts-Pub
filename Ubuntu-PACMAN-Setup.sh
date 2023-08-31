@@ -93,7 +93,9 @@ curl https://baltocdn.com/helm/signing.asc | apt-key add - \
 curl -sL https://aka.ms/InstallAzureCLIDeb | bash
 
 # Install AWS CLI
-apt-get install awscli -y
+apt-get install awscli -y \
+&& pip3 install awsume \
+&& pip3 install awsume-console-plugin
 
 # Install go
 apt-get install golang-go -y

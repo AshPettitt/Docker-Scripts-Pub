@@ -92,12 +92,11 @@ curl https://baltocdn.com/helm/signing.asc | apt-key add - \
 # Install Azure CLI
 curl -sL https://aka.ms/InstallAzureCLIDeb | bash
 
+# Install AWS CLI
+apt-get install awscli -y
+
 # Install go
 apt-get install golang-go -y
-
-# Install Python
-
-# Install AWS CLI
 
 # Install user tools
 apt-get install nano -y \

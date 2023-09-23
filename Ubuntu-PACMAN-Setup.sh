@@ -100,6 +100,9 @@ apt-get install awscli -y \
 # Install go
 apt-get install golang-go -y
 
+# Install hugo
+apt-get install hugo -y
+
 # Install user tools
 apt-get install nano -y \
 && apt-get install tree -y \

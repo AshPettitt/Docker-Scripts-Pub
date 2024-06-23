@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Script variables
-TERRAGRUNT_VERSION=v0.44.4
+TERRAGRUNT_VERSION=v0.59.5
 
 # Update Ubuntu
 apt-get update \

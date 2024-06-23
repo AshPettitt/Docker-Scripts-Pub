@@ -110,6 +110,11 @@ apt-get install nano -y \
 && apt-get install iputils-ping -y \
 && apt-get install traceroute -y
 
+# Install zsh
+apt-get install zsh
+chsh -s $(which zsh)
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 # Git global config
 echo Do you want to configure git global user settings [y/n]?
 read vargit
